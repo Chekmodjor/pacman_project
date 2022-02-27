@@ -49,6 +49,10 @@ Map::Map(Map* map)
 		}
 	}
 }
+Map::~Map()
+{
+	clearMemory();
+}
 void Map::update_int_map()
 {
 	for (int i = 0; i < height; ++i)

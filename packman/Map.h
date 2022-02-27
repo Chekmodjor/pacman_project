@@ -30,6 +30,7 @@ public:
 	Map();
 	Map(int width, int height, Symb wall, Symb empty);
 	Map(Map* map);
+	~Map();
 	void update_int_map();
 	void update_string_map();
 	void clearMemory();

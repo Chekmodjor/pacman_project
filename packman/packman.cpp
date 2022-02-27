@@ -28,7 +28,7 @@ int main()
 	};
 	Map map(10, 10, Symb(Wall, '*'), Symb(Empty, '_'));
 	map.setStringMap(10, 10, field);
-	int begin_x = 8;
+	int begin_x = 1;
 	int begin_y = 1;
 	int end_x = 1;
 	int end_y = 8;
