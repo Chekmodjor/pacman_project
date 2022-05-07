@@ -22,7 +22,7 @@ class Map
 private:
 	int width;
 	int height;
-	std::string* string_map;
+	char** string_map;
 	int** int_map;
 	Symb wall;
 	Symb empty;
@@ -30,7 +30,6 @@ public:
 	Map();
 	Map(int width, int height, Symb wall, Symb empty);
 	Map(Map* map);
-	~Map();
 	void update_int_map();
 	void update_string_map();
 	void clearMemory();
@@ -39,7 +38,7 @@ public:
 	void showIntMap();
 	void showStringMap();
 	int** getIntMap();
-	std::string* getStringMap();
+	char** getStringMap();
 	int getWidth();
 	int getHeight();
 	Symb getWallSymb();

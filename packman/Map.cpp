@@ -14,17 +14,18 @@ Map::Map(int width, int height, Symb wall, Symb empty)
 	this->height = height;
 	this->wall = wall;
 	this->empty = empty;
-	string_map = new std::string[height];
+	string_map = new char*[height];
 	int_map = new int* [height];
 	for (int i = 0; i < height; ++i)
 	{
 		int_map[i] = new int[width];
+		string_map[i] = new char[width];
 	}
 	for (int i = 0; i < height; ++i)
 	{
 		for (int j = 0; j < width; ++j)
 		{
-			string_map[i] += empty.str_symb;
+			string_map[i][j] = empty.str_symb;
 			int_map[i][j] = empty.int_symb;
 		}
 	}
@@ -37,21 +38,18 @@ Map::Map(Map* map)
 	this->wall.str_symb = map->wall.str_symb;
 	this->empty.int_symb = map->empty.int_symb;
 	this->empty.str_symb = map->empty.str_symb;
-	this->string_map = new std::string[this->height];
+	this->string_map = new char*[this->height];
 	this->int_map = new int* [height];
 	for (int i = 0; i < height; ++i)
 	{
-		this->string_map[i] = map->string_map[i];
+		this->string_map[i] = new char[width];
 		this->int_map[i] = new int[width];
 		for (int j = 0; j < width; ++j)
 		{
 			this->int_map[i][j] = map->int_map[i][j];
+			this->string_map[i][j] = map->string_map[i][j];
 		}
 	}
-}
-Map::~Map()
-{
-	clearMemory();
 }
 void Map::update_int_map()
 {
@@ -68,9 +66,9 @@ void Map::update_int_map()
 }
 void Map::update_string_map()
 {
-	for (int i = 0; i < width; ++i)
+	for (int i = 0; i < height; ++i)
 	{
-		for (int j = 0; j < height; ++j)
+		for (int j = 0; j < width; ++j)
 		{
 			if (int_map[i][j] == wall.int_symb)
 				string_map[i][j] = wall.str_symb;
@@ -84,12 +82,16 @@ void Map::setStringMap(int width, int height, std::string* string_map)
 	clearMemory();
 	this->width = width;
 	this->height = height;
-	this->string_map = new std::string[height];
+	this->string_map = new char*[height];
 	this->int_map = new int* [height];
 	for (int i = 0; i < height; ++i)
 	{
-		this->string_map[i] = string_map[i];
-		int_map[i] = new int[width];
+		this->string_map[i] = new char[width];
+		this->int_map[i] = new int[width];
+		for (int j = 0; j < width; ++j)
+		{
+			this->string_map[i][j] = string_map[i][j];
+		}
 	}
 	update_int_map();
 }
@@ -98,11 +100,16 @@ void Map::setIntMap(int width, int height, int** int_map)
 	clearMemory();
 	this->width = width;
 	this->height = height;
-	this->int_map = new int* [width];
-	this->string_map = new std::string[height];
-	for (int i = 0; i < width; ++i)
+	this->int_map = new int* [height];
+	this->string_map = new char*[height];
+	for (int i = 0; i < height; ++i)
 	{
-		int_map[i] = new int[height];
+		this->int_map[i] = new int[width];
+		this->string_map[i] = new char[width];
+		for (int j = 0; j < width; ++j)
+		{
+			this->int_map[i][j] = int_map[i][j];
+		}
 	}
 	update_string_map();
 }
@@ -132,7 +139,7 @@ int** Map::getIntMap()
 {
 	return this->int_map;
 }
-std::string* Map::getStringMap()
+char** Map::getStringMap()
 {
 	return this->string_map;
 }
@@ -154,10 +161,17 @@ Symb Map::getEmptySymb()
 }
 void Map::clearMemory()
 {
-	if(this->string_map)
+	if (this->string_map)
+	{
+		for (int i = 0; i < height; ++i)
+		{
+			delete[] this->string_map[i];
+		}
 		delete[] this->string_map;
+	}
 	if (this->int_map)
 	{
+
 		for (int i = 0; i < height; ++i)
 		{
 			delete[] this->int_map[i];

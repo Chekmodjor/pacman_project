@@ -1,5 +1,84 @@
-﻿  AI.cpp
-  Map.cpp
-  packman.cpp
-  Создание кода...
+﻿  Player.cpp
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(12,13): warning C4305: =: усечение из "double" в "float"
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(21,27): warning C4244: =: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(23,26): warning C4244: =: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(87,33): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(89,89): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(89,82): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(89,57): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(90,98): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(90,90): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(90,77): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(91,96): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(91,89): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(91,53): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(92,98): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(92,90): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(92,77): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(163,43): warning C4244: return: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\Admin\Desktop\pacman_project\packman\Player.cpp(167,20): warning C4244: return: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   packman.vcxproj -> C:\Users\Admin\Desktop\pacman_project\Debug\packman.exe
